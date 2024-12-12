@@ -8,18 +8,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-
-Route::get('feedback/{id}',[FeedbackController::class, 'show']); // display feedback
-Route::post('addFeedback',[FeedbackController::class, 'store']); // insert feedback
-
-
-
-
-
-Route::delete('deleteFeedback/{id}',[FeedbackController::class, 'destroy']); // delete feedback
-
-Route::post('/feedback/save', [FeedbackController::class, 'saveFeedback']);
-Route::get('/feedback', [FeedbackController::class, 'getAllFeedback']);
-
-// Get feedback by ID
-Route::get('/feedback/{id}', [FeedbackController::class, 'getFeedbackById']);
+Route::delete('deleteFeedback/{id}',[FeedbackController::class, 'destroy']); //Delete feedback
+Route::post('/feedback/save', [FeedbackController::class, 'saveFeedback']);//Add and Edit Feedback
+Route::get('/feedback', [FeedbackController::class, 'getAllFeedback']); //Display all feedback
+Route::get('/feedback/{id}', [FeedbackController::class, 'getFeedbackById']);// Get feedback by ID
