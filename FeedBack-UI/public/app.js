@@ -90,6 +90,6 @@ $(document).ready(function () {
                 console.error('Error deleting feedback', error);
             });
     };
-
+    clearForm();
     fetchFeedbacks();
 });
